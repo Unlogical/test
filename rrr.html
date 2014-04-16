@@ -3,11 +3,13 @@
   <head>
   <meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
   <script language="javascript" >
+    function button1onclick() {
+	   document.write('<h1>Hello</h1>')
+	   return false
+    }     
     window.onload= function () {
-      document.getElementById("button1").onclick = function () {
-	     document.write('<h1>Hello</h1>')
-      } 
-    } 
+	   document.getElementById("button1").onclick = button1onclick
+    }
   </script>
   <title>привет</title>
   </head>
