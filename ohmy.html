@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+  <head>
+  <meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
+  <script language="javascript" >
+    function randomColor() {
+      return '#'+Math.floor(Math.random()*0xffffff).toString(16);
+    } 
+    function button1onclick() {
+	   var div= document.getElementById("divan") 
+	   var words = document.getElementById("put").value.split(" ")
+	   var divan =""    
+	   for (i=0; i<words.length; i++) {
+	     divan += "<span style =\" font-size:50px; color:" +randomColor()+ "\">" +words[i]+" "+ "</span>"
+      }
+      div.innerHTML = divan
+	   return false
+    }     
+    window.onload= function () {
+	   document.getElementById("button1").onclick = button1onclick
+    }
+  </script>
+  <title>привет</title>
+  </head>
+  <body>
+    <div style="width:500px; height:200px; border:1px solid black;" id="divan"></div>
+    <input class="text" style="width:150px; height:20px" id="put">
+    <button id="button1">do it</button>
+  </body>
+</html>
