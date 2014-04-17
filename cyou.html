@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html" charset="utf-8" /> 
+    <script language="javascript" >
+      function getform() {
+	     document.getElementById("form1").style.visibility = "visible"
+      }
+      function getlink() {
+	     document.getElementById("link1").onclick = getform
+	     return false
+      }
+      window.onload = function () {
+	     getlink
+      }
+    </script>
+    <title>формочка</title>
+  </head>
+  <body>
+    <form id="form1"  style="visibility:hidden">
+      <input type="text" placeholder="login">
+      <input type="passmord" placeholder="password">    
+    </form>
+    <a href="" id="link1" >Enter</a>
+  </body>
+</html>
