@@ -3,19 +3,17 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html" charset="utf-8" /> 
     <script language="javascript" >
-      function getform() {
-	     document.getElementById("form1").style.visibility = "visible"// задаю его вместо visibility потому что это проще проверить,к тому же я так хоть могу редактировать форму,я ж ее вижу)
-      }                                               // но все равно не работает(
-      function getlink() {
-	     document.getElementById("link1").onclick = getform
+      function reglinkOnclick() {
+	     document.getElementById("form1").style.visibility = "visible" 
 	     return false
+      }                                              
+      function init() {
+	     document.getElementById("link1").onclick = reglinkOnclick
       }
-      window.onload = function () {
-	     getlink()
-      }
+      window.onload = init
     </script>
     <style> 
-      .links {
+      .reglink {
         text-decoration:none;
         color:rgb(122,155,155);      
       } 
@@ -53,7 +51,7 @@
     <title>формочка</title>
   </head>
   <body>
-    <a href="#" class="links" id="link1" >Enter</a>
+    <a href="#" class="reglink" id="link1" >Enter</a>
     <form class="regForm" id="form1">
       <button class="closebutton"><img src="close.png" height="20px" alt=""></button>
       <input type="text" placeholder="login">
