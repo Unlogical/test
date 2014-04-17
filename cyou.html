@@ -24,8 +24,12 @@
         border: 1px solid rgb(122,155,155); 
         background-color: rgb(222,255,255); 
         width:255px; 
-        margin-left:550px; 
-        margin-top:200px      
+        position: fixed;
+        right: 50%;
+        top: 50%;
+        margin-top: -160px;
+        margin-right: -150px; 
+        z-index: 2;   
       }   
       input {
         display:block; 
@@ -50,7 +54,7 @@
   <body>
     <a href="#" class="links" id="link1" >Enter</a>
     <form class="forms" id="form1">
-      <button class="closebutton"><img src="close.png" height="20px" alt="" ></button>
+      <button class="closebutton"><img src="close.png" height="20px" alt=""></button>
       <input type="text" placeholder="login">
       <input type="passmord" placeholder="password"> 
       <button class="enterbutton">Enter</button>   
