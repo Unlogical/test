@@ -5,7 +5,7 @@
     <script language="javascript" >
       function getform() {
 	     document.getElementById("form1").style.backgroundColor = "red"// задаю его вместо visibility потому что это проще проверить,к тому же я так хоть могу редактировать форму,я ж ее вижу)
-      }
+      }                                               // но все равно не работает(
       function getlink() {
 	     document.getElementById("link1").onclick = getform
 	     return false
@@ -14,15 +14,46 @@
 	     getlink
       }
     </script>
+    <style> 
+      .links {
+        text-decoration:none;
+        color:rgb(122,155,155);      
+      } 
+      .forms {
+        padding:0 5px; 
+        border: 1px solid rgb(122,155,155); 
+        background-color: rgb(222,255,255); 
+        width:255px; 
+        margin-left:550px; 
+        margin-top:200px      
+      }   
+      input {
+        display:block; 
+        width:240px; 
+        height:30px; 
+        margin:5px
+      }
+      .closebutton {
+        border:0px; 
+        padding:5px 10px 30px 200px; 
+        height:20px; 
+        background-color:rgb(222,255,255); 
+        width:20px; 
+        float:right      
+      }
+      .enterbutton {
+        margin:20px 0 5px 10px;      
+      }
+    </style>
     <title>формочка</title>
   </head>
   <body>
-    <a href="#" id="link1" style="text-decoration:none; color:rgb(122,155,155);" >Enter</a>
-    <form id="form1"  style="padding:0 5px; border: 1px solid rgb(122,155,155); background-color: rgb(222,255,255); width:255px; margin-left:550px; margin-top:200px ">
-      <button style="border:0px; padding:5px 10px 30px 200px; height:20px; background-color:rgb(222,255,255); width:20px; float:right"><img src="close.png" height="20px" alt="" ></button>
-      <input type="text" placeholder="login" style="display:block; width:240px; height:30px; margin:5px">
-      <input type="passmord" placeholder="password" style="display:block; width:240px; height:30px; margin:5px"> 
-      <button style="margin:20px 0 5px 10px">Enter</button>   
+    <a href="#" class="links" id="link1" >Enter</a>
+    <form class="forms" id="form1">
+      <button class="closebutton"><img src="close.png" height="20px" alt="" ></button>
+      <input type="text" placeholder="login">
+      <input type="passmord" placeholder="password"> 
+      <button class="enterbutton">Enter</button>   
     </form> 
   </body>
 </html>
