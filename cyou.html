@@ -4,14 +4,14 @@
     <meta http-equiv="Content-Type" content="text/html" charset="utf-8" /> 
     <script language="javascript" >
       function getform() {
-	     document.getElementById("form1").style.backgroundColor = "red"// задаю его вместо visibility потому что это проще проверить,к тому же я так хоть могу редактировать форму,я ж ее вижу)
+	     document.getElementById("form1").style.visibility = "visible"// задаю его вместо visibility потому что это проще проверить,к тому же я так хоть могу редактировать форму,я ж ее вижу)
       }                                               // но все равно не работает(
       function getlink() {
 	     document.getElementById("link1").onclick = getform
 	     return false
       }
       window.onload = function () {
-	     getlink
+	     getlink()
       }
     </script>
     <style> 
@@ -19,7 +19,7 @@
         text-decoration:none;
         color:rgb(122,155,155);      
       } 
-      .forms {
+      .regForm {
         padding:0 5px; 
         border: 1px solid rgb(122,155,155); 
         background-color: rgb(222,255,255); 
@@ -29,6 +29,7 @@
         top: 50%;
         margin-top: -160px;
         margin-right: -150px; 
+        visibility: hidden;
         z-index: 2;   
       }   
       input {
@@ -53,7 +54,7 @@
   </head>
   <body>
     <a href="#" class="links" id="link1" >Enter</a>
-    <form class="forms" id="form1">
+    <form class="regForm" id="form1">
       <button class="closebutton"><img src="close.png" height="20px" alt=""></button>
       <input type="text" placeholder="login">
       <input type="passmord" placeholder="password"> 
