@@ -6,9 +6,14 @@
       function reglinkOnclick() {
 	     document.getElementById("form1").style.visibility = "visible" 
 	     return false
-      }                                              
+      }  
+      function hideOnclick() {
+	     document.getElementById("form1").style.visibility = "hidden" 
+	     return false
+      }                                            
       function init() {
 	     document.getElementById("link1").onclick = reglinkOnclick
+	     document.getElementById("hide").onclick = hideOnclick
       }
       window.onload = init
     </script>
@@ -53,7 +58,7 @@
   <body>
     <a href="#" class="reglink" id="link1" >Enter</a>
     <form class="regForm" id="form1">
-      <button class="closebutton"><img src="close.png" height="20px" alt=""></button>
+      <button class="closebutton" id="hide"><img src="close.png" height="20px" alt=""></button>
       <input type="text" placeholder="login">
       <input type="passmord" placeholder="password"> 
       <button class="enterbutton">Enter</button>   
