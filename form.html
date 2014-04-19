@@ -1,18 +1,21 @@
 <!doctype html>
 <html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html" charset="utf-8" /> 
+    <meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
+    <script language="javascript">
+      window.onload = fun    
+    </script> 
     <title>формочка</title>
   </head>
   <body>
-    <form name="test" method="post" action="">
-      <p>Ваше имя:<br> <input type="text" size="40"> </p>
+    <form name="testform" method="post" action="">
+      <p>E-mail:<br> <input type="text" size="40"> </p>
       <p>Каким браузером в основном пользуетесь:<br>
         <input type="radio" name="browser" value="ie"> Internet Explorer<br>
         <input type="radio" name="browser" value="opera"> Opera<br>
         <input type="radio" name="browser" value="firefox"> Firefox<br>
       </p>
-      <p><input type="checkbox">Я думаю,что Витя - прелесть</p>
+      <p><input type="checkbox" name="opinion">Я думаю,что Витя - прелесть</p>
   <p><input type="submit" value="Отправить">
    <input type="reset" value="Очистить"></p>
  </form>
