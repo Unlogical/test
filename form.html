@@ -5,7 +5,7 @@
     <script language="javascript">
       window.onload = function () {
 	     var form = document.forms["testform"]
-	     form.submit = function () {
+	     form.onsubmit = function () {
 	       alert("просто сообщение")
         }
       }    
@@ -13,7 +13,7 @@
     <title>формочка</title>
   </head>
   <body>
-    <form name="testform" method="post" action="">
+    <form name= "testform" method="post" action="">
       <p>E-mail:<br> <input type="text" size="40"> </p>
       <p>Каким браузером в основном пользуетесь:<br>
         <input type="radio" name="browser" value="ie"> Internet Explorer<br>
