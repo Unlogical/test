@@ -6,7 +6,13 @@
       window.onload = function () {
 	     var form = document.forms["testform"]
 	     form.onsubmit = function () {
-	       alert(document.forms["testform"].email.value)
+	       var reg = (/^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]*\.[a-z]{2,6}$ 
+	       if (reg.test(form.email.value)) {
+            alert('yesss')	       
+	       }
+	       else {
+	         alert('nooooo')
+          }
         }
       }    
     </script> 
