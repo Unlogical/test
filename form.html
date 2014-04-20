@@ -4,14 +4,14 @@
     <meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
     <script language="javascript">
       window.onload = function () {
-	     var form = document.forms["testform"]
-	     form.email.onChange = function () {
-	       var reg = /^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]*\.[a-z]{2,6}$/
-	       if (reg.test(form.email.value)) {
+      var form = document.forms["testform"]
+        form.email.onChange = function () {
+          var reg = /^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]*\.[a-z]{2,6}$/
+            if (reg.test(form.email.value)) {
             form.email.style.borderColor= 'green'	       
-	       }
-	       else {
-	         form.email.style.borderColor= 'red'
+          }
+          else {
+            form.email.style.borderColor= 'red'
           }
         }
       }    
