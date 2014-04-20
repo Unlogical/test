@@ -5,16 +5,17 @@
     <script language="javascript">
       function validateEmail() {
         var reg = /^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]*\.[a-z]{2,6}$/
-        if (reg.test(form.email.value)) {
-          form.email.style.borderColor= 'green'	       
+        var Email = document.forms["testform"].email
+        if (reg.test(Email.value)) {
+          Email.style.borderColor= 'green'	       
         }
         else {
-          form.email.style.borderColor= 'red'
+          Email.style.borderColor= 'red'
         }
      }
       window.onload = function () {
       var form = document.forms["testform"]
-        form.email.onkeyup = validateEmail 
+        form.email.onkeyup = validateEmail
       }    
     </script> 
     <title>формочка</title>
@@ -27,7 +28,7 @@
         <input type="radio" name="browser" value="opera"> Opera<br>
         <input type="radio" name="browser" value="firefox"> Firefox<br>
       </p>
-      <p><input type="checkbox" name="opinion">Я думаю,что Витя милый</p>
+      <p><input type="checkbox" name="opinion">Я думаю,что Витя глупый</p>
   <p><input type="submit" value="Отправить">
    <input type="reset" value="Очистить"></p>
  </form>
