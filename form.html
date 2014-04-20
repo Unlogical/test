@@ -5,13 +5,13 @@
     <script language="javascript">
       window.onload = function () {
 	     var form = document.forms["testform"]
-	     form.onsubmit = function () {
-	       var reg = (/^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]*\.[a-z]{2,6}$ 
+	     form.email.onChange = function () {
+	       var reg = /^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]*\.[a-z]{2,6}$/
 	       if (reg.test(form.email.value)) {
-            alert('yesss')	       
+            form.email.style.borderColor= 'green'	       
 	       }
 	       else {
-	         alert('nooooo')
+	         form.email.style.borderColor= 'red'
           }
         }
       }    
