@@ -24,8 +24,8 @@
         var form = document.forms["testform"]
         var emailregexp = /^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]*\.[a-z]{2,6}$/ 
         form.email.onkeyup = validateInput(form.email,emailregexp)
-        document.forms["testform"].addEventListener(submit,validateCheckbox)
-        document.forms["testform"].addEventListener(submit,check)
+        form.addEventListener(submit,validateCheckbox)
+        form.addEventListener(submit,check)
       }    
     </script> 
     <title>формочка</title>
