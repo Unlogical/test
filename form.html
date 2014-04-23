@@ -8,24 +8,18 @@
           input.style.borderColor = reg.test(input.value) ? 'green' : 'red'
         }
       }
-      function check() {
-	     if (document.forms["testform"].input.style.borderColor = 'red') {return false}
-      }
       function validateCheckbox() {
 	     if (!document.getElementById("testid").checked) {
 	       alert("Витя милый. И Вы должны согласиться.")
 	       return false
 	     }
-	     if (document.forms["testform"].email.style.borderColor='red') {
-	       return false
-        }
 	   }  
       window.onload = function () {
         var form = document.forms["testform"]
         var emailregexp = /^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]*\.[a-z]{2,6}$/ 
         form.email.onkeyup = validateInput(form.email,emailregexp)
         form.addEventListener(submit,validateCheckbox)
-        form.addEventListener(submit,check)
+        form.addEventListener(submit,validateInput(form.email,emailregexp))
       }    
     </script> 
     <title>формочка</title>
