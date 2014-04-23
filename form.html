@@ -13,13 +13,13 @@
 	       alert("Витя милый. И Вы должны согласиться.")
 	       return false
 	     }
-	   }  
+      }  
       window.onload = function () {
         var form = document.forms["testform"]
         var emailregexp = /^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]*\.[a-z]{2,6}$/ 
         form.email.onkeyup = validateInput(form.email,emailregexp)
-        form.addEventListener(submit,validateCheckbox)
-        form.addEventListener(submit,validateInput(form.email,emailregexp))
+        form.addEventListener("submit",validateCheckbox)
+        form.addEventListener("submit",validateInput)
       }    
     </script> 
     <title>формочка</title>
