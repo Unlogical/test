@@ -5,7 +5,9 @@
     <script language="javascript">
       function validateInput(input, reg) { 
         return function() {
-          input.style.borderColor = reg.test(input.value) ? 'green' : 'red'
+          var testIt = reg.test(input.value) 
+          input.style.borderColor = testIt  ? 'green' : 'red'
+          if(!testIt) {return false}
         }
       }
       function validateCheckbox() {
@@ -18,8 +20,8 @@
         var form = document.forms["testform"]
         var emailregexp = /^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]*\.[a-z]{2,6}$/ 
         form.email.onkeyup = validateInput(form.email,emailregexp)
-        form.addEventListener("submit",validateCheckbox)
-        form.addEventListener("submit",validateInput)
+        form.addEventListener("submit",validateCheckbox,false)
+        form.addEventListener("submit",validateInput,false)
       }    
     </script> 
     <title>формочка</title>
