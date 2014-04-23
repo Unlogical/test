@@ -5,17 +5,17 @@
     <script language="javascript">
       function validateInput(input, reg) { 
         return function() {
-          reg.test(input.value) ? input.style.borderColor= 'green' : input.style.borderColor= 'red'
+          input.style.borderColor = reg.test(input.value) ? 'green' :  'red'
         }
       }
       function validateCheckbox() {
-	     document.getElementById("testid").checked ? alert("Витя милый. И Вы должны согласиться.") : alert("Верно")
+	     alert(!document.getElementById("testid").checked ? "Витя милый. И Вы должны согласиться." : "Верно")
       }
       window.onload = function () {
         var form = document.forms["testform"]
         var emailregexp = /^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]*\.[a-z]{2,6}$/ 
         form.email.onkeyup = validateInput(form.email,emailregexp)
-        document.forms.onsubmit = validateCheckbox
+        document.forms["testform"].onsubmit = validateCheckbox
       }    
     </script> 
     <title>формочка</title>
