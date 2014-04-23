@@ -19,9 +19,10 @@
       window.onload = function () {
         var form = document.forms["testform"]
         var emailregexp = /^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]*\.[a-z]{2,6}$/ 
-        form.email.onkeyup = validateInput(form.email,emailregexp)
+        var validateEmail = validateInput(form.email,emailregexp)
+        form.email.onkeyup = validateEmail
         form.addEventListener("submit",validateCheckbox,false)
-        form.addEventListener("submit",validateInput,false)
+        form.addEventListener("submit",validateEmail,false)
       }    
     </script> 
     <title>формочка</title>
