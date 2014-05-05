@@ -5,11 +5,42 @@
   <script type="text/javascript" src="lib/jquery-1.11.1.js"></script>
   <script type="text/javascript" src="lib/jquery.jcarousel.js"></script>
   <script language="javascript" >
-    $(function() {
-      $('.jcarousel').jcarousel({
-        // Configuration goes here
-      });
+   (function($) {
+     $(function() {
+       $('.jcarousel').jcarousel();
+
+        $('.jcarousel-control-prev')
+          .on('jcarouselcontrol:active', function() {
+            $(this).removeClass('inactive');
+          })
+          .on('jcarouselcontrol:inactive', function() {
+            $(this).addClass('inactive');
+          })
+          .jcarouselControl({
+            target: '-=1'
+          });
+
+        $('.jcarousel-control-next')
+          .on('jcarouselcontrol:active', function() {
+            $(this).removeClass('inactive');
+          })
+          .on('jcarouselcontrol:inactive', function() {
+            $(this).addClass('inactive');
+          })
+          .jcarouselControl({
+            target: '+=1'
+          });
+
+        $('.jcarousel-pagination')
+          .on('jcarouselpagination:active', 'a', function() {
+            $(this).addClass('active');
+          })
+          .on('jcarouselpagination:inactive', 'a', function() {
+            $(this).removeClass('active');
+          })
+       .jcarouselPagination();
     });
+  })(jQuery);
   </script>
   <style type="text/css">
     .jcarousel {
@@ -18,17 +49,16 @@
     }
     
     .jcarousel ul {
-      width: 20000em;
+      width: 800px;
+      height: 400px;
       position: relative;
-
-      /* Optional, required in this case since it's a <ul> element */
       list-style: none;
-      margin: 0;
+      margin-left: 20%;
       padding: 0;
+      background-color: forestgreen;
     }
     
     .jcarousel li {
-    /* Required only for block elements like <li>'s */
       float: left;
     }
     .img1 {
@@ -45,13 +75,22 @@
   <title>привет</title>
   </head>
   <body>
-    <div class="jcarousel">
-      <ul>
-        <li><span class="image img1"></span></li>
-        <li><span class="image img2"></span></li>
-        <li><span class="image img3"></span></li>
-      </ul>
+        <div class="jcarousel-wrapper">
+        <div class="jcarousel" data-jcarousel="true">
+            <ul>
+              <li><span class="image img1"></span></li>
+              <li><span class="image img2"></span></li>
+              <li><span class="image img3"></span></li>
+            </ul>
+        </div>
+        <p class="photo-credits"></p>
+        <a class="jcarousel-control-prev inactive" href="#" data-jcarouselcontrol="true"> ‹ </a>
+        <a class="jcarousel-control-next" href="#" data-jcarouselcontrol="true"> › </a>
+        <p class="jcarousel-pagination" data-jcarouselpagination="true">
+          <a class="active" href="#1"></a>
+          <a href="#2"></a>
+          <a href="#3"></a>
+        </p>
     </div>
-
   </body>
 </html>
