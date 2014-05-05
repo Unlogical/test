@@ -15,7 +15,20 @@
 	       alert("Витя милый. И Вы должны согласиться.")
 	       return false
 	     }
-      }  
+      } 
+      function validateRadio() {
+	     var browsers = document.forms["testform"].browser
+	     var found = false
+	     for (var i in browsers) {
+	       if (browsers[i].checked) {
+	         found = true
+	         break
+          }
+        }
+        if (!found) {
+          alert("Выберите браузер")        
+        }
+      } 
       window.onload = function () {
         var form = document.forms["testform"]
         var emailregexp = /^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]*\.[a-z]{2,6}$/ 
@@ -23,6 +36,7 @@
         form.email.onkeyup = validateEmail
         form.addEventListener("submit",validateCheckbox,false)
         form.addEventListener("submit",validateEmail,false)
+        form.addEventListener("submit",validateRadio,false)
       }    
     </script> 
     <title>формочка</title>

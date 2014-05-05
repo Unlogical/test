@@ -2,18 +2,57 @@
 <html>
   <head>
   <meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
+  <script type="text/javascript" src="/path/to/jquery.js"></script>
+  <script type="text/javascript" src="/path/to/jquery.jcarousel.js"></script>
   <script language="javascript" >
-    function button1onclick() {
-	   document.body.style.backgroundColor = '#'+Math.floor(Math.random()*0xffffff).toString(16);
-	   return false
-    }     
-    window.onload= function () {
-	   document.getElementById("button1").onclick = button1onclick
+    $(function() {
+      $('.jcarousel').jcarousel({
+        // Configuration goes here
+      });
+    });
     }
   </script>
+  <style type="text/css">
+    .jcarousel {
+      position: relative;
+      overflow: hidden;    
+    }
+    
+    .jcarousel ul {
+      width: 20000em;
+      position: relative;
+
+      /* Optional, required in this case since it's a <ul> element */
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .jcarousel li {
+    /* Required only for block elements like <li>'s */
+      float: left;
+    }
+    .img1 {
+      background-image: url(1.jpg);    
+    }
+    .img2 {
+      background-image: url(2.jpg);    
+    }
+    .img3 {
+      background-image: url(3.jpg);    
+    }
+
+  </style>
   <title>привет</title>
   </head>
   <body>
-    <button id="button1">изменить цвет</button>
+    <div class="jcarousel">
+      <ul>
+        <li><span class="image img1"></span></li>
+        <li><span class="image img2"></span></li>
+        <li><span class="image img3"></span></li>
+      </ul>
+    </div>
+
   </body>
 </html>
